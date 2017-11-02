@@ -1,0 +1,42 @@
+{
+  "name": "cucumber.decorators",
+  "version": "1.0.0",
+  "description": "TypeScript decorators for cucumber test",
+  "main": "lib/decorators.js",
+  "types": "lib/decorators.d.ts",
+  "scripts": {
+    "predemo": "tsc -p tsconfig.json",
+    "demo": "wdio",
+    "build": "tsc -p typescript.build.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlippieCoetser/Cucumber.Decorators.git"
+  },
+  "keywords": [
+    "Typescript",
+    "Decorators",
+    "Cucumber",
+    "Webdriverio"
+  ],
+  "files": [
+    "lib/*.js",
+    "lib/*.d.ts"
+  ],
+  "author": "Flippie Coetser",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FlippieCoetser/Cucumber.Decorators/issues"
+  },
+  "homepage": "https://github.com/FlippieCoetser/Cucumber.Decorators#readme",
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/cucumber": "^2.0.4",
+    "@types/webdriverio": "^4.8.6",
+    "chai": "^4.1.2",
+    "wdio-cucumber-framework": "^1.0.2",
+    "wdio-selenium-standalone-service": "0.0.9",
+    "wdio-spec-reporter": "^0.1.2",
+    "webdriverio": "^4.8.0"
+  }
+}

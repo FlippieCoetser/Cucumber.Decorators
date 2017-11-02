@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "node_modules/**/": true,
+        "decorator/**/*.js": true,
+        "helpers/**/*.js": true,
+        "steps/**/*.js": true
+    }
+}

@@ -1,0 +1,9 @@
+node_modules/
+test/*.js
+src/*.js
+src/*.js.map
+src/*.d.ts
+complexity/
+coverage/
+lib/
+.nyc_output/
