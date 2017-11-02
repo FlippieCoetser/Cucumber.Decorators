@@ -38,6 +38,11 @@ class checkSite {
 let CheckSite = new checkSite();
 ```
 
+### Run Example
+`NPM Install`
+`NPM run build`
+`NPM run demo`
+
 #### Explanation
 The `Cucumber` Decorator updates the class constuctor to ensure each method within the class is executed during instantiation.
 
