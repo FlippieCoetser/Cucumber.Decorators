@@ -75,4 +75,4 @@ export function Given(expression: any) {
 
 ```
 
-Note: the `When` Decorator operates in a similar fastion as the `Given` Decorator.
+Note: the `When` Decorator operates in a similar fashion as the `Given` Decorator.
