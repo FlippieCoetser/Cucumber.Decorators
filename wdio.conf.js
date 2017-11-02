@@ -1,4 +1,5 @@
-//
+const shell = require('shelljs');
+
 // ===============================
 // CucumberOpts.require Workaround
 // ===============================
@@ -60,7 +61,7 @@ exports.config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        maxInstances: 5,
+        maxInstances: 1,
         //
         browserName: 'chrome'
     }],
@@ -257,8 +258,9 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that ran
      */
-    // afterSession: function (config, capabilities, specs) {
-    // },
+    afterSession: function (config, capabilities, specs) {
+        shell.exec('taskkill /FI "IMAGENAME eq 2.33-x64-chromedriver" /F');
+    },
     /**
      * Gets executed after all workers got shut down and the process is about to exit. It is not
      * possible to defer the end of the process using a promise.

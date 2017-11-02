@@ -5,5 +5,5 @@ Feature: Local server test
     Background:
         Given I open the url "http://www.google.com"
 
-    Scenario: Google
+    Scenario: Check Title
         Then I expect that the title is "Google"
