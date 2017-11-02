@@ -7,7 +7,7 @@ Typescript Decorators for Cucumber Tests
 ```
 Feature: Local server test
     As a developer
-    I want google site have the correct title
+    I want check the web site
 
     Background:
         Given I open the url "http://www.google.com"
