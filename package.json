@@ -40,5 +40,7 @@
     "wdio-spec-reporter": "^0.1.2",
     "webdriverio": "^4.8.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "cucumber": "^3.1.0"
+  }
 }
