@@ -7,3 +7,4 @@ tsconfig.json
 demo/*
 documentation/*
 wdio.conf.js
+desktop.ini

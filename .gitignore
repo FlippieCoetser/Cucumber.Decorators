@@ -7,3 +7,4 @@ complexity/
 coverage/
 lib/
 .nyc_output/
+desktop.ini
