@@ -39,8 +39,10 @@ let CheckSite = new checkSite();
 ```
 
 ### Run Example
+To run the example you will need to clone the repo as the npm package was designed to be as small as possible.
 ```bash
-npm Install
+git clone https://github.com/FlippieCoetser/Cucumber.Decorators
+npm install
 npm run build
 npm run demo
 ```
