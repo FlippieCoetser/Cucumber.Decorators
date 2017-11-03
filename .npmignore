@@ -1,0 +1,9 @@
+.vscode/*
+node_modules/*
+src/*
+.git
+.gitignore
+tsconfig.json
+demo/*
+documentation/*
+wdio.conf.js
