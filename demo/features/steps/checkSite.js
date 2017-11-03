@@ -24,7 +24,7 @@ var checkSite = (function () {
         decorators_1.Given(/^I open the (url|site) "([^"]*)?"$/)
     ], checkSite.prototype, "openWebsite", null);
     __decorate([
-        decorators_1.When(/^I expect that the title is( not)* "([^"]*)?"$/)
+        decorators_1.Then(/^I expect that the title is( not)* "([^"]*)?"$/)
     ], checkSite.prototype, "title", null);
     checkSite = __decorate([
         decorators_1.Cucumber
