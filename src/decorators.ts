@@ -8,7 +8,7 @@ export function Cucumber(target: Function){
 
 export function Given(expression: any) {
     return function(target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>){
-        let assertion = descriptor.value();
+        let assertion = descriptor.value;
 
         descriptor.value = () => 
             defineSupportCode(({ Given }) => {
@@ -19,26 +19,26 @@ export function Given(expression: any) {
     }
 }
 
-export function When(value: any) {
+export function When(expression: any) {
     return function(target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>){
-        let assertion = descriptor.value();
+        let assertion = descriptor.value;
 
         descriptor.value = () => 
             defineSupportCode(({ When }) => {
-                When(value, assertion);
+                When(expression, assertion);
             });
 
         return descriptor;
     }
 }
 
-export function Then(value: any) {
+export function Then(expression: any) {
     return function(target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>){
-        let assertion = descriptor.value();
+        let assertion = descriptor.value;
 
         descriptor.value = () => 
             defineSupportCode(({ Then }) => {
-                Then(value, assertion);
+                Then(expression, assertion);
             });
 
         return descriptor;
