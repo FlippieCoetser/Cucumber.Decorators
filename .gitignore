@@ -1,10 +1,4 @@
 node_modules/
-test/*.js
-src/*.js
-src/*.js.map
-src/*.d.ts
-complexity/
-coverage/
+demo/**/*.js
 lib/
-.nyc_output/
 desktop.ini
