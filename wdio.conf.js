@@ -258,14 +258,15 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that ran
      */
-    afterSession: function (config, capabilities, specs) {
-        shell.exec('taskkill /FI "IMAGENAME eq 2.33-x64-chromedriver" /F');
-    },
+    //afterSession: function (config, capabilities, specs) {
+    //},
     /**
      * Gets executed after all workers got shut down and the process is about to exit. It is not
      * possible to defer the end of the process using a promise.
      * @param {Object} exitCode 0 - success, 1 - fail
      */
-    // onComplete: function(exitCode) {
-    // }
+    onComplete: function(exitCode) {
+        // Workaround to kill chromedriver process after running tests
+        shell.exec('taskkill /FI "IMAGENAME eq 2.33-x64-chromedriver" /F');
+    }
 }
