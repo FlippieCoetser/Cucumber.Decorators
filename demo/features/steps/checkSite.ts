@@ -5,13 +5,13 @@ import check from '../helpers/check';
 @Cucumber
 class checkSite {
     @Given(/^I open the (url|site) "([^"]*)?"$/)
-    public openWebsite() {
-        return action.Open;
+    public openWebsite(type: string, page: string) {
+        action.Open(type, page);
     };
 
     @Then(/^I expect that the title is( not)* "([^"]*)?"$/)
-    public title() {
-        return check.Title
+    public title(falseCase, expectedTitle) {
+        check.Title(falseCase, expectedTitle)
     };
 };
 
