@@ -1,9 +1,13 @@
-import { Cucumber, Given, When, Then } from '../../../lib/decorators'
+import { Cucumber, Before, Given, When, Then } from '../../../lib/decorators'
 import action from '../helpers/action';
 import check from '../helpers/check';
 
 @Cucumber
 class checkSite {
+    @Before("@Test")
+    public before() {
+        console.log('Test before feature with Tag @Test')
+    }
     @Given(/^I open the (url|site) "([^"]*)?"$/)
     public openWebsite(type: string, page: string) {
         action.Open(type, page);

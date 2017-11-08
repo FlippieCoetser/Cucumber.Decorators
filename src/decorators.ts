@@ -6,13 +6,17 @@ export function Cucumber(target: Function){
     }
 }
 
-export function Before() {
+export function Before(expression?: any) {
     return function(target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>){
         let assertion = descriptor.value;
 
         descriptor.value = () => 
             defineSupportCode(({ Before }) => {
+                if (expression) {
+                Before(expression, assertion);
+                } else {
                 Before(assertion);
+                }
             });
         
         return descriptor;
