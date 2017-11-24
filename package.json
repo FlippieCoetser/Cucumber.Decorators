@@ -1,6 +1,6 @@
 {
   "name": "cucumber.decorators",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "TypeScript decorators for cucumber test",
   "main": "lib/decorators.js",
   "types": "lib/decorators.d.ts",

@@ -1,4 +1,4 @@
-import { Cucumber, Before, Given, When, Then } from '../../../lib/decorators'
+import { Cucumber, Before, Given, When, Then, After } from '../../../lib/decorators'
 import action from '../helpers/action';
 import check from '../helpers/check';
 
@@ -17,6 +17,11 @@ class checkSite {
     public title(falseCase, expectedTitle) {
         check.Title(falseCase, expectedTitle)
     };
+
+    @After("@Test")
+    public after() {
+        console.log('Test after feature with Tag @Test')
+    }
 };
 
 let CheckSite = new checkSite();
