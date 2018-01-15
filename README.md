@@ -4,7 +4,7 @@ Typescript Decorators for Cucumber Tests
 
 ## Cucumber Example
 #### Feature File
-```
+```Cucumber
 Feature: Local server test
     As a developer
     I want check the web site
