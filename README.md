@@ -38,6 +38,11 @@ class checkSite {
 let CheckSite = new checkSite();
 ```
 
+### Development Prerequisites
+- Typescript
+- JAVA
+- Chromedriver
+
 ### Run Example
 To run the example you will need to clone the repo as the npm package was designed to be as small as possible.
 ```bash
@@ -46,6 +51,11 @@ npm install
 npm run build
 npm run demo
 ```
+
+> Note: When node-gyp produces an error, first install windows-build-tools globally and set the config to the correct version.  
+`npm install --global --production windows-build-tools`  
+`npm config set msvs_version 2015 --global`
+
 
 #### Explanation
 The `Cucumber` Decorator updates the class constuctor to ensure each method within the class is executed during instantiation.
@@ -76,5 +86,4 @@ export function Given(expression: any) {
 }
 
 ```
-
 Note: the `When` Decorator operates in a similar fashion as the `Given` Decorator.
