@@ -1,7 +1,6 @@
 # Cucumber.Decorators
 Typescript Decorators for Cucumber Tests
 
-
 ## Cucumber Example
 #### Feature File
 ```Cucumber
@@ -18,18 +17,18 @@ Feature: Local server test
 
 #### Typescript Step File
 ```typescript
-import { Cucumber, Given, When } from '../decorator/decorator'
+import { cucumber, given, when } from '../decorator/decorator'
 import action from '../helpers/action';
 import check from '../helpers/check';
 
-@Cucumber
+@cucumber
 class checkSite {
-    @Given(/^I open the (url|site) "([^"]*)?"$/)
+    @given(/^I open the (url|site) "([^"]*)?"$/)
     public openWebsite() {
         return action.Open;
     };
 
-    @When(/^I expect that the title is( not)* "([^"]*)?"$/)
+    @when(/^I expect that the title is( not)* "([^"]*)?"$/)
     public title() {
         return check.Title
     };
@@ -58,10 +57,10 @@ npm run demo
 
 
 #### Explanation
-The `Cucumber` Decorator updates the class constuctor to ensure each method within the class is executed during instantiation.
+The `cucumber` Decorator updates the class constuctor to ensure each method within the class is executed during instantiation.
 
 ```typescript
-export function Cucumber(target: Function){
+export function cucumber(target: Function){
     for (var member in target.prototype) {
         target.prototype[member]();
     }
@@ -69,21 +68,18 @@ export function Cucumber(target: Function){
 
 ```
 
-The `Given` Decorator wraps the provided method and passes the expression into the required cucumber function.
+The `given` Decorator wraps the provided method and passes the expression into the required cucumber function.
 
 ```typescript
-export function Given(expression: any) {
+export function given(expression: any) {
     return function(target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>){
         let assertion = descriptor.value();
 
-        descriptor.value = () => 
-            defineSupportCode(({ Given }) => {
-                Given(expression,assertion);
-            });
+        descriptor.value = () => Given(expression,assertion);
         
         return descriptor;
     }
 }
 
 ```
-Note: the `When` Decorator operates in a similar fashion as the `Given` Decorator.
+Note: the `when` and `then` Decorator operates in a similar fashion as the `given` Decorator.

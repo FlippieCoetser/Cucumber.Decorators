@@ -1,6 +1,6 @@
 {
   "name": "cucumber.decorators",
-  "version": "1.6.0",
+  "version": "2.0.0",
   "description": "TypeScript decorators for cucumber test",
   "main": "lib/decorators.js",
   "types": "lib/decorators.d.ts",
@@ -31,7 +31,7 @@
   "homepage": "https://github.com/FlippieCoetser/Cucumber.Decorators#readme",
   "devDependencies": {
     "@types/chai": "^4.0.4",
-    "@types/cucumber": "^2.0.4",
+    "@types/cucumber": "^4.0.4",
     "@types/webdriverio": "^4.8.6",
     "chai": "^4.1.2",
     "shelljs": "^0.7.8",
@@ -41,6 +41,6 @@
     "webdriverio": "^4.8.0"
   },
   "dependencies": {
-    "cucumber": "^3.1.0"
+    "cucumber": "^4.2.1"
   }
 }

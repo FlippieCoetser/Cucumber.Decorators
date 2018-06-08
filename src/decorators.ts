@@ -1,79 +1,69 @@
-import {defineSupportCode} from 'cucumber';
+import {Before, Given, When, Then, After} from 'cucumber';
 
-export function Cucumber(target: Function){
+export function cucumber(target: Function){
     for (const member in target.prototype) {
         target.prototype[member]();
     }
 }
 
-export function Before(expression?: any) {
+export function before(expression?: any) {
     return function(target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>){
         let assertion = descriptor.value;
 
         descriptor.value = () => 
-            defineSupportCode(({ Before }) => {
+             {
                 if (expression) {
-                Before(expression, assertion);
+                return Before(expression, assertion);
                 } else {
-                Before(assertion);
+                return Before(assertion);
                 }
-            });
+            };
         
         return descriptor;
     }
 }
 
-export function Given(expression: any) {
+export function given(expression: any) {
     return function(target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>){
         let assertion = descriptor.value;
 
-        descriptor.value = () => 
-            defineSupportCode(({ Given }) => {
-                Given(expression,assertion);
-            });
+        descriptor.value = () => Given(expression,assertion);
         
         return descriptor;
     }
 }
 
-export function When(expression: any) {
+export function when(expression: any) {
     return function(target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>){
         let assertion = descriptor.value;
 
-        descriptor.value = () => 
-            defineSupportCode(({ When }) => {
-                When(expression, assertion);
-            });
+        descriptor.value = () => When(expression, assertion);
 
         return descriptor;
     }
 }
 
-export function Then(expression: any) {
+export function then(expression: any) {
     return function(target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>){
         let assertion = descriptor.value;
 
-        descriptor.value = () => 
-            defineSupportCode(({ Then }) => {
-                Then(expression, assertion);
-            });
+        descriptor.value = () => Then(expression, assertion);
 
         return descriptor;
     }
 }
 
-export function After(expression?: any) {
+export function after(expression?: any) {
     return function(target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>){
         let assertion = descriptor.value;
 
-        descriptor.value = () => 
-            defineSupportCode(({ After }) => {
+        descriptor.value = () =>  {
                 if (expression) {
-                After(expression, assertion);
+                return After(expression, assertion);
                 } else {
-                After(assertion);
+                return After(assertion);
                 }
-            });
+            };
         
         return descriptor;
     }
