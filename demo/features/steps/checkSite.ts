@@ -1,24 +1,24 @@
-import { Cucumber, Before, Given, When, Then, After } from '../../../lib/decorators'
+import { cucumber, before, given, when, then, after } from '../../../lib/decorators'
 import action from '../helpers/action';
 import check from '../helpers/check';
 
-@Cucumber
+@cucumber
 class checkSite {
-    @Before("@Test")
+    @before("@Test")
     public before() {
         console.log('Test before feature with Tag @Test')
     }
-    @Given(/^I open the (url|site) "([^"]*)?"$/)
+    @given(/^I open the (url|site) "([^"]*)?"$/)
     public openWebsite(type: string, page: string) {
         action.Open(type, page);
     };
 
-    @Then(/^I expect that the title is( not)* "([^"]*)?"$/)
+    @then(/^I expect that the title is( not)* "([^"]*)?"$/)
     public title(falseCase, expectedTitle) {
         check.Title(falseCase, expectedTitle)
     };
 
-    @After("@Test")
+    @after("@Test")
     public after() {
         console.log('Test after feature with Tag @Test')
     }
